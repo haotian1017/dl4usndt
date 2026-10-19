@@ -1,0 +1,18 @@
+# 基础依赖（必装）
+numpy>=1.24
+opencv-python>=4.8        # 无显示环境用 opencv-python-headless
+# 训练框架：按你的 CUDA 版本去 pytorch.org 选装，例如
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+torch>=2.0
+torchvision>=0.15
+
+# 主力模型方案（arch=smp_unet 时需要）
+segmentation-models-pytorch>=0.3.3
+timm>=0.9                 # smp 的编码器权重来自 timm
+
+# 可选
+onnx>=1.14                # 导出 ONNX
+onnxruntime-gpu>=1.16     # 或 onnxruntime（CPU/边缘）
+tensorboard>=2.13         # --tb 可视化（不装也能训练）
+segment-anything          # 仅 autolabel.py --use_sam 时需要
+labelme                   # 人工复核标注
